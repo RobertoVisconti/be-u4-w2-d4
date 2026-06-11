@@ -57,7 +57,7 @@ public class Application {
         totalePerCustomer.forEach((customer, totaleSpeso) -> System.out.println("Cliente: " + customer.getName() + " Totale speso: " + totaleSpeso + "€"));
 
 
-        System.out.println("************************** ESERCIZIO 3 **************************");
+        System.out.println("************************** ESERCIZIO 3  **************************");
 
         List<Product> topPrice = products.stream()
                 .sorted(Comparator.comparingDouble((Product product) -> product.getPrice()).reversed())
@@ -65,6 +65,15 @@ public class Application {
                 .toList();
 
         topPrice.forEach(product -> System.out.println("- " + product.getName() + ": " + product.getPrice() + "€"));
+
+
+        System.out.println("************************** ESERCIZIO 3 2°versione **************************");
+
+        List<Product> topPrice2 = products.stream()
+                .sorted((productA, productB) -> Double.compare(productB.getPrice(), productA.getPrice()))
+                .limit(5).toList();
+
+        topPrice2.forEach(product -> System.out.println("- " + product.getName() + ": " + product.getPrice() + "€"));
 
 
         System.out.println("************************** ESERCIZIO 4 **************************");
@@ -86,7 +95,7 @@ public class Application {
                 .collect(Collectors.groupingBy(product -> product.getCategory(), Collectors.summingDouble(product -> product.getPrice())));
 
         totalePerCategoria.forEach((categoria, totale) -> System.out.println("Categoria: " + categoria + " Totale prezzo prodotti: " + totale));
-        
+
 
     }
 }
