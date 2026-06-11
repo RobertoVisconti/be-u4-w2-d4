@@ -67,13 +67,13 @@ public class Application {
         topPrice.forEach(product -> System.out.println("- " + product.getName() + ": " + product.getPrice() + "€"));
 
 
-        System.out.println("************************** ESERCIZIO 3 2°versione **************************");
-
-        List<Product> topPrice2 = products.stream()
-                .sorted((productA, productB) -> Double.compare(productB.getPrice(), productA.getPrice()))
-                .limit(5).toList();
-
-        topPrice2.forEach(product -> System.out.println("- " + product.getName() + ": " + product.getPrice() + "€"));
+//        System.out.println("************************** ESERCIZIO 3 2°versione **************************");
+//
+//        List<Product> topPrice2 = products.stream()
+//                .sorted((productA, productB) -> Double.compare(productB.getPrice(), productA.getPrice()))
+//                .limit(5).toList();
+//
+//        topPrice2.forEach(product -> System.out.println("- " + product.getName() + ": " + product.getPrice() + "€"));
 
 
         System.out.println("************************** ESERCIZIO 4 **************************");
